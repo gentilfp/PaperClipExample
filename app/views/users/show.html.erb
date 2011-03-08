@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @user.name %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @user.email %>
+</p>
+
+<a href="<%= @user.attach.url %> "><b> File attached </b></a>
+<br/>
+<% # Will show the real size picture %>
+<%= image_tag @user.pic.url %>
+<br/>
+<% # Will the style MEDIUM configured before in your model %>
+<%= image_tag @user.pic.url(:medium) %>
+<br/>
+<% # Will the style THUMB configured before in your model %>
+<%= image_tag @user.pic.url(:thumb) %>
+<br/>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
